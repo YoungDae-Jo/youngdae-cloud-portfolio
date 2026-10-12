@@ -150,7 +150,7 @@ export const projects = [
     title: "Multi-Cloud FinOps & AIOps Platform with Semi-Automated Disaster Recovery",
     role: "Cloud Infrastructure / Kubernetes Engineer",
     period: "2026.04.16 ~ 2026.07.21",
-    contribution: "팀 프로젝트 (6인)",
+    contribution: "50%",
     environment: "AWS Seoul (Primary) / Osaka (DR)",
     keyAchievement: "Terraform 기반 AWS·Kubernetes 인프라 구성과 RDS 연계 및 반자동 재해 복구 설계",
     architecture: "/architecture/project3-aws-architecture.png",
