@@ -17,28 +17,28 @@ export default function ProjectDetail() {
                   <span className="pill">Contribution {project.contribution}</span>
                 </div>
               </div>
-              <div className="soft-card flex min-h-[190px] items-center justify-center p-4">
+              {project.demoQr && <div className="soft-card flex min-h-[190px] items-center justify-center p-4">
                 <div className="text-center">
                   <p className="mb-3 text-xs font-black uppercase tracking-[.16em] text-[#2563EB]">Demo QR</p>
                   <Image src={project.demoQr} alt={`${project.title} demo QR`} width={128} height={128} className="mx-auto rounded-xl" />
                 </div>
-              </div>
+              </div>}
             </div>
 
-            <div className="mt-12 grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
+            <div className={`mt-12 grid gap-8 ${project.architecture ? "lg:grid-cols-[.85fr_1.15fr]" : ""}`}>
               <div className="space-y-6">
                 <InfoBlock title="Overview" items={project.overview} />
                 <InfoBlock title="Background" items={project.background} />
               </div>
-              <div>
+              {project.architecture && <div>
                 <p className="eyebrow">Architecture</p>
                 <a href={project.architecture} target="_blank" className="image-wrap mt-4 block hover-lift">
                   <Image src={project.architecture} alt={`${project.title} Architecture`} width={1920} height={1080} className={index === 1 ? "image-frame-tall" : "image-frame"} />
                 </a>
-              </div>
+              </div>}
             </div>
 
-            {project.infrastructure && (
+            {"infrastructure" in project && project.infrastructure && (
               <div className="mt-14">
                 <p className="eyebrow">On-Premise Private Cloud</p>
                 <h3 className="sub-title mt-5 text-[#0f172a]">Infrastructure Planning</h3>
@@ -73,7 +73,7 @@ export default function ProjectDetail() {
               </div>
             </div>
 
-            {project.featureImages && (
+            {"featureImages" in project && project.featureImages && (
               <div className="mt-14">
                 <p className="eyebrow">Core Features</p>
                 <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

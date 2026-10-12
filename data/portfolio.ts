@@ -145,4 +145,51 @@ export const projects = [
       { title: "ArgoCD", src: "/architecture/ArgoCD.png", description: "GitOps 기반 배포 및 자동 Sync" }
     ],
   },
+  {
+    id: "03",
+    title: "Multi-Cloud FinOps & AIOps Platform with Semi-Automated Disaster Recovery",
+    role: "Cloud Infrastructure / Kubernetes Engineer",
+    period: "2026.04.16 ~ 2026.07.21",
+    contribution: "팀 프로젝트 (6인)",
+    environment: "AWS Seoul (Primary) / Osaka (DR)",
+    keyAchievement: "Terraform 기반 AWS·Kubernetes 인프라 구성과 RDS 연계 및 반자동 재해 복구 설계",
+    architecture: "/architecture/project3-aws-architecture.png",
+    demoQr: "/qr/project3-demo-qr.png",
+    stack: ["AWS", "Terraform", "Ansible", "EC2", "Kubernetes", "RDS PostgreSQL", "Kafka", "Prometheus", "Grafana", "GitHub Actions", "Lambda", "Route 53", "Athena"],
+    overview: [
+      "AWS 서울 리전 운영 환경과 오사카 리전 재해 복구 환경을 중심으로 비용 분석(FinOps), 이상 탐지(AIOps), 반자동 DR을 결합한 통합 프로젝트입니다.",
+      "Terraform과 Ansible로 인프라 구성을 자동화하고 EC2 기반 Kubernetes 및 RDS PostgreSQL 연계를 진행했습니다."
+    ],
+    background: [
+      "클라우드 운영에서는 장애 감지뿐 아니라 비용 가시성과 복구 절차의 일관성을 함께 고려해야 합니다.",
+      "운영 데이터 수집·분석과 담당자 승인(Human Gate)을 거치는 복구 흐름을 하나의 플랫폼으로 설계했습니다."
+    ],
+    decisions: [
+      "Terraform 및 Ansible을 활용한 AWS 인프라 구성",
+      "EC2 기반 Kubernetes 클러스터 운영 및 ALB/Ingress 연계",
+      "RDS PostgreSQL을 통한 관리형 데이터베이스 전환",
+      "Kafka 기반 운영 메트릭 수집과 Prometheus·Grafana 활용",
+      "Isolation Forest 이상 탐지 및 Random Forest 비용 예측 적용",
+      "서울 운영 리전과 오사카 DR 리전, Human Gate 기반 반자동 복구 설계"
+    ],
+    troubleshooting: [
+      "Kubernetes 노드의 EBS 루트 볼륨 부족으로 발생한 DiskPressure를 용량 확장으로 해결했습니다.",
+      "RDS 연결 시 VPC 구성이 일치하지 않는 문제를 확인하고 동일 VPC 내에 재구성했습니다.",
+      "Kafka 브로커 통신을 위해 내부 IP와 보안 그룹의 9092 포트 허용 규칙을 점검했습니다."
+    ],
+    outcome: [
+      "Terraform·Ansible 기반 AWS 인프라 및 EC2 Kubernetes 클러스터 구성",
+      "RDS PostgreSQL 전환과 내부 네트워크 연계 작업 수행",
+      "FinOps·AIOps 분석과 반자동 DR 시나리오를 통합한 프로젝트 아키텍처 설계"
+    ],
+    featureImages: [
+      { title: "Operations Workflow", src: "/architecture/project3-operations-workflow.png", description: "운영 데이터 수집부터 AIOps·FinOps 분석과 대응까지의 흐름" },
+      { title: "DR 실행 결과", src: "/architecture/project3-dr-result.png", description: "DR 전환 과정의 서비스 복구 및 정상 응답 확인 화면" }
+    ],
+    lessons: [
+      "인프라 코드화뿐 아니라 네트워크, 데이터베이스, 클러스터 간 의존성을 함께 검증하는 중요성을 배웠습니다.",
+      "DR은 자동 전환 기능만이 아니라 승인 절차와 복구 목표를 포함한 운영 설계가 필요하다는 점을 경험했습니다."
+    ]
+  },
+
 ];
